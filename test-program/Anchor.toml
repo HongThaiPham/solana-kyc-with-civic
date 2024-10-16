@@ -1,0 +1,22 @@
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+test_program = "BAF5oCh7sLAPfk9baGvX9tQGCe21aUYNU3mGxYLw7oav"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[[test.genesis]]
+address = "gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs"
+program = "tests/solana_gateway.so"
